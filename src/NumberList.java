@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class NumberList {
 
+	ArrayList<Integer> numbers;
+
 	public ArrayList<Integer> addNumbers(int[] num) {
 		return null;
 	}
@@ -14,4 +16,7 @@ public class NumberList {
 		return null;
 	}
 
+	public boolean checkNumberPosition(int num, int pos) {
+		return false;
+	}
 }
