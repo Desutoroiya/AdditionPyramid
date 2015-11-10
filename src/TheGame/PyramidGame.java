@@ -26,14 +26,18 @@ public class PyramidGame {
 		difficulty = input;
 	}
 	
+	public void createPyramid() {		
+	}
+	
 	public int getDifficulty() {
 		return difficulty;
 	}
 	
-	public ArrayList<Integer> getPyramid() {
+	public int[] getPyramid() {
 		return null;
 	}
 
-	public void createPyramid() {		
+	public boolean[] getUserArray() {
+		return null;
 	}
 }

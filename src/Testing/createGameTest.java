@@ -19,13 +19,13 @@ public class createGameTest {
 	public void testCreatePyramid() {
 		game.createPyramid();
 		if (game.getDifficulty() == 1) {
-			if (game.getPyramid().size() != 4)
+			if (game.getPyramid().length != 4 || game.getUserArray().length != 4)
 				fail("Wrong pyramid size for this difficulty level!");
 		} else if (game.getDifficulty() == 2) {
-			if (game.getPyramid().size() != 8)
+			if (game.getPyramid().length != 8 || game.getUserArray().length != 8)
 				fail("Wrong pyramid size for this difficulty level!");
 		} else if (game.getDifficulty() == 3) {
-			if (game.getPyramid().size() != 16)
+			if (game.getPyramid().length != 16 || game.getUserArray().length != 16)
 				fail("Wrong pyramid size for this difficulty level!");
 		}
 	}
