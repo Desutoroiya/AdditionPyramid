@@ -4,22 +4,29 @@ import java.util.Scanner;
 
 public class PyramidGame {
 
-	public int difficulty;
+	private int difficulty;
 	public int randomNumbers;
 
+	Scanner scanner = new Scanner(System.in);
+	
 	public PyramidGame() {
-		Scanner s = new Scanner(System.in);
 		int input = 0;
 		do {
 			System.out.println("Choose difficulty: 1-EASY, 2-MEDIUM, 3-HARD");
 			try {
-				String line = s.nextLine();
+				String line = scanner.nextLine();
 				input = (int) Integer.parseInt(line.charAt(0) + "");
+				if (line.length() != 1)
+					input = 0;
 			} catch (Exception e) {
 				System.out.println("Please choose number 1,2 or 3");
 			}
 		} while (input < 1 || input > 3);
 		difficulty = input;
+	}
+	
+	public int getDifficulty() {
+		return difficulty;
 	}
 
 }

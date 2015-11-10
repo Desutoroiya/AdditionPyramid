@@ -8,10 +8,11 @@ import TheGame.PyramidGame;
 
 public class createGameTest {
 
+	PyramidGame game = new PyramidGame();
+	
 	@Test
 	public void testCreateGame() {		
-		PyramidGame game = new PyramidGame();
-		int result = game.difficulty;
+		int result = game.getDifficulty();
 		if (result < 1 || result > 3)
 			fail("Difficulty not decided!");
 	}
