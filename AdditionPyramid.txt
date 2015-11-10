@@ -1,0 +1,18 @@
+0. START THE GAME
+
+- createPyramid
+  [decide level, create pyramid]
+
+1. DECIDE THE PYRAMID NUMBERS
+
+- randomNumberGenerator
+  [fill in the base cell]
+- completePyramidCells
+  [complete the rest of the pyramid]
+
+2. GET INPUT & CHECK IF THE GAME IS FINISHED
+
+- getInputCell
+  [get input number for a cell, check if it's the right answer for that cell]
+- isCompleted
+  [check if the game is completed]
