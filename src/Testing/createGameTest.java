@@ -9,14 +9,10 @@ import TheGame.PyramidGame;
 public class createGameTest {
 
 	@Test
-	public void testCreateGame() {
-		//check difficulty
-		//create pyramid
-		
+	public void testCreateGame() {		
 		PyramidGame game = new PyramidGame();
 		int result = game.difficulty;
 		if (result < 1 || result > 3)
 			fail("Difficulty not decided!");
 	}
-
 }

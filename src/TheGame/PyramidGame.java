@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class PyramidGame {
 
 	public int difficulty;
+	public int randomNumbers;
 
 	public PyramidGame() {
 		Scanner s = new Scanner(System.in);
