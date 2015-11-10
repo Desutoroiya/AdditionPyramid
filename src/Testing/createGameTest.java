@@ -7,7 +7,7 @@ import TheGame.PyramidGame;
 public class createGameTest {
 
 	private PyramidGame game = new PyramidGame();
-		
+
 	@Test
 	public void testCreateGame() {
 		int result = game.getDifficulty();
@@ -18,15 +18,8 @@ public class createGameTest {
 	@Test
 	public void testCreatePyramid() {
 		game.createPyramid();
-		if (game.getDifficulty() == 1) {
-			if (game.getPyramid().length != 4 || game.getUserArray().length != 4)
-				fail("Wrong pyramid size for this difficulty level!");
-		} else if (game.getDifficulty() == 2) {
-			if (game.getPyramid().length != 8 || game.getUserArray().length != 8)
-				fail("Wrong pyramid size for this difficulty level!");
-		} else if (game.getDifficulty() == 3) {
-			if (game.getPyramid().length != 16 || game.getUserArray().length != 16)
-				fail("Wrong pyramid size for this difficulty level!");
-		}
+		int size = (int) Math.pow(2, game.getDifficulty() + 1);
+		if (game.getPyramid().length != size || game.getUserArray().length != size)
+			fail("Wrong pyramid size for this difficulty level!");
 	}
 }

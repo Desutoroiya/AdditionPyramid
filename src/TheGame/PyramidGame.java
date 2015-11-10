@@ -33,13 +33,7 @@ public class PyramidGame {
 	}
 
 	public void createPyramid() {
-		int size = 0;
-		if (difficulty == 1)
-			size = 4;
-		else if (difficulty == 2)
-			size = 8;
-		else
-			size = 16;
+		int size = (int) Math.pow(2, difficulty + 1);
 		pyramid = new int[size];
 		userArray = new boolean[size];
 	}
