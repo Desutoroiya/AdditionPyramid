@@ -8,6 +8,9 @@ public class createGameTest {
 
 	private PyramidGame game = new PyramidGame();
 
+	/**
+	 * Test for the constructor. Check difficulty value.
+	 */
 	@Test
 	public void testCreateGame() {
 		int result = game.getDifficulty();
@@ -15,9 +18,14 @@ public class createGameTest {
 			fail("Difficulty not decided!");
 	}
 
+	/**
+	 * Test for the method createPyramid().
+	 */
 	@Test
 	public void testCreatePyramid() {
+		// Call the method under test
 		game.createPyramid();
+		// Check the arrays' size
 		int size = (int) Math.pow(2, game.getDifficulty() + 1);
 		if (game.getPyramid().length != size || game.getUserArray().length != size)
 			fail("Wrong pyramid size for this difficulty level!");

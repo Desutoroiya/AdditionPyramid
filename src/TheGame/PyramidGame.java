@@ -1,11 +1,6 @@
 package TheGame;
 
-import static org.junit.Assert.fail;
-
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import org.junit.Test;
 
 public class PyramidGame {
 
@@ -16,6 +11,9 @@ public class PyramidGame {
 
 	Scanner scanner = new Scanner(System.in);
 
+	/**
+	 * Constructor. Ask difficulty level from the user (System.in).
+	 */
 	public PyramidGame() {
 		int input = 0;
 		do {
@@ -32,6 +30,10 @@ public class PyramidGame {
 		difficulty = input;
 	}
 
+	/**
+	 * Create the two arrays needed for the game (pyramid - solution array &
+	 * user array).
+	 */
 	public void createPyramid() {
 		int size = (int) Math.pow(2, difficulty + 1);
 		pyramid = new int[size];
