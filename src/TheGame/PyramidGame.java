@@ -1,5 +1,6 @@
 package TheGame;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PyramidGame {
@@ -28,5 +29,11 @@ public class PyramidGame {
 	public int getDifficulty() {
 		return difficulty;
 	}
+	
+	public ArrayList<Integer> getPyramid() {
+		return null;
+	}
 
+	public void createPyramid() {		
+	}
 }

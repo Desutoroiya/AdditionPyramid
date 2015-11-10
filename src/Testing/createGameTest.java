@@ -1,19 +1,32 @@
 package Testing;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import TheGame.PyramidGame;
 
 public class createGameTest {
 
-	PyramidGame game = new PyramidGame();
-	
+	private PyramidGame game = new PyramidGame();
+		
 	@Test
-	public void testCreateGame() {		
+	public void testCreateGame() {
 		int result = game.getDifficulty();
 		if (result < 1 || result > 3)
 			fail("Difficulty not decided!");
+	}
+
+	@Test
+	public void testCreatePyramid() {
+		game.createPyramid();
+		if (game.getDifficulty() == 1) {
+			if (game.getPyramid().size() != 4)
+				fail("Wrong pyramid size for this difficulty level!");
+		} else if (game.getDifficulty() == 2) {
+			if (game.getPyramid().size() != 8)
+				fail("Wrong pyramid size for this difficulty level!");
+		} else if (game.getDifficulty() == 3) {
+			if (game.getPyramid().size() != 16)
+				fail("Wrong pyramid size for this difficulty level!");
+		}
 	}
 }
