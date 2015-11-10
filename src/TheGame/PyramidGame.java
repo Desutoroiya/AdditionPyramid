@@ -30,7 +30,7 @@ public class PyramidGame {
 		return difficulty;
 	}
 	
-	public ArrayList<Integer> getPyramid() {
+	public int[] getPyramid() {
 		return null;
 	}
 
