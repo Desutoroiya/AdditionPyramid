@@ -100,7 +100,7 @@ public class PyramidGame {
 			Random random = new Random();
 			randomNumbers = random.nextInt(50) + 1;
 			pyramid[i] = randomNumbers;
-			//userArray[i] = true;
+			userArray[i] = true;
 		}
 	}
 }
