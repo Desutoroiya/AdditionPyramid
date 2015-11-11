@@ -45,6 +45,11 @@ public class PyramidGame {
 		userArray = new boolean[size];
 	}
 
+	/**
+	 * 
+	 * @param line
+	 * @return
+	 */
 	public boolean setInputCell(String line) {
 		int x, y, value, i;
 		try {
@@ -56,9 +61,8 @@ public class PyramidGame {
 				return false;
 			}
 		} catch (Exception e) {
-
 		}
-		return false;
+		return true;
 	}
 
 	public int getDifficulty() {
