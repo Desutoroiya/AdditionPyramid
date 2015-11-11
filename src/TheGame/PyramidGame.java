@@ -1,5 +1,6 @@
 package TheGame;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class PyramidGame {
@@ -58,6 +59,13 @@ public class PyramidGame {
 		return userArray;
 	}
 
-	public void createRandomNumbers() {		
+	public void createRandomNumbers() {
+		int size, s = size = (int) Math.pow(2, difficulty + 1);
+		for(int i = 0; i < size; i++){
+			Random random = new Random();
+			randomNumbers = random.nextInt(50) + 1;
+			pyramid[i] = randomNumbers;
+			System.out.println(randomNumbers);
+		}
 	}
 }
