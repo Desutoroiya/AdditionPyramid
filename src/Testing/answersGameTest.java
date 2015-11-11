@@ -12,11 +12,13 @@ public class answersGameTest {
 	public void solutionGameTest() {
 		PyramidGame game = new PyramidGame();
 
-		game.completePyramid(new int[] {1, 2, 3, 4});
+		game.completePyramid(new int[] { 1, 2, 3, 4 });
 		int[] pyramid = game.getPyramid();
-		int[] expected = new int[] {1, 2, 3, 4, 3, 5, 7, 8, 12, 20};
+		int[] expected = new int[] { 1, 2, 3, 4, 3, 5, 7, 8, 12, 20 };
 		int[] result = game.getPyramid();
-		assertEquals(expected, result);
+
+		for (int i = 0; i < pyramid.length; i++)
+			assertEquals(expected[i], result[i]);
 	}
 
 }
