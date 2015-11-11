@@ -61,6 +61,10 @@ public class PyramidGame {
 				return false;
 			}
 			x = (int) Integer.parseInt(line.substring(0, i));
+			if (x < 1 || x > (int) Math.pow(2, difficulty + 1)) {
+				System.out.println("Wrong input for cell number");
+				return false;
+			}
 			for (j = i + 1; j < line.length(); j++)
 				if (line.charAt(j) == ' ')
 					break;
