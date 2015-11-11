@@ -103,4 +103,7 @@ public class PyramidGame {
 			userArray[i] = true;
 		}
 	}
+
+	public void completePyramid(int[] is) {		
+	}
 }
