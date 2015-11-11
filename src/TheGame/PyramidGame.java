@@ -57,4 +57,7 @@ public class PyramidGame {
 	public boolean[] getUserArray() {
 		return userArray;
 	}
+
+	public void createRandomNumbers() {		
+	}
 }
