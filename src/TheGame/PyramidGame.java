@@ -29,6 +29,7 @@ public class PyramidGame {
 			}
 		} while (input < 1 || input > 3);
 		difficulty = input;
+		createPyramid();
 	}
 
 	/**
@@ -36,6 +37,8 @@ public class PyramidGame {
 	 * user array).
 	 */
 	public void createPyramid() {
+		if (pyramid != null && userArray != null)
+			return;
 		int size, s = size = (int) Math.pow(2, difficulty + 1);
 		for (int i = s - 1; i > 0; i--)
 			size += i;
@@ -43,8 +46,36 @@ public class PyramidGame {
 		userArray = new boolean[size];
 	}
 
-	public boolean setInputCell(String string) {
-		return false;
+	/**
+	 * 
+	 * @param line
+	 * @return
+	 */
+	public boolean setInputCell(String line) {
+		int x, y, value, i, j;
+		try {
+			for (i = 0; i < line.length(); i++)
+				if (line.charAt(i) == ' ')
+					break;
+			if (i == line.length()) {
+				System.out.println("Wrong input form of \"" + line + "\".");
+				return false;
+			}
+			x = (int) Integer.parseInt(line.substring(0, i));
+			if (x < 1 || x > (int) Math.pow(2, difficulty + 1)) {
+				System.out.println("Wrong input for cell number");
+				return false;
+			}
+			for (j = i + 1; j < line.length(); j++)
+				if (line.charAt(j) == ' ')
+					break;
+			y = (int) Integer.parseInt(line.substring(i + 1, j));
+			value = (int) Integer.parseInt(line.substring(j + 1, line.length()));
+		} catch (Exception e) {
+			System.out.println("Wrong input form of \"" + line + "\".");
+			return false;
+		}
+		return true;
 	}
 
 	public int getDifficulty() {
