@@ -6,13 +6,16 @@
 1. DECIDE THE PYRAMID NUMBERS
 
 - randomNumberGenerator
-  [fill in the base cell]
+  [fill in the base cells]
 - completePyramidCells
   [complete the rest of the pyramid]
 
 2. GET INPUT & CHECK IF THE GAME IS FINISHED
 
-- getInputCell
-  [get input number for a cell, check if it's the right answer for that cell]
-- isCompleted
+- getInputCell()
+  [get input number for a cell & call the next method]
+- setInputCell(String line)
+  [check input form, check if it's the right answer for that cell 
+   & set the cell number with the input (if it's correct)]
+- isCompleted()
   [check if the game is completed]

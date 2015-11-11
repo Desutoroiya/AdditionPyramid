@@ -40,6 +40,10 @@ public class PyramidGame {
 		userArray = new boolean[size];
 	}
 
+	public boolean setInputCell(String string) {
+		return false;
+	}
+	
 	public int getDifficulty() {
 		return difficulty;
 	}
