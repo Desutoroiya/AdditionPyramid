@@ -28,6 +28,7 @@ public class PyramidGame {
 			}
 		} while (input < 1 || input > 3);
 		difficulty = input;
+		createPyramid();
 	}
 
 	/**
@@ -35,6 +36,8 @@ public class PyramidGame {
 	 * user array).
 	 */
 	public void createPyramid() {
+		if (pyramid != null && userArray != null)
+			return;
 		int size, s = size = (int) Math.pow(2, difficulty + 1);
 		for (int i = s - 1; i > 0; i--)
 			size += i;
@@ -42,7 +45,19 @@ public class PyramidGame {
 		userArray = new boolean[size];
 	}
 
-	public boolean setInputCell(String string) {
+	public boolean setInputCell(String line) {
+		int x, y, value, i;
+		try {
+			for (i = 0; i < line.length(); i++)
+				if (line.charAt(i) == ' ')
+					break;
+			if (i == line.length()) {
+				System.out.println("Wrong input form of \"" + line + "\".");
+				return false;
+			}
+		} catch (Exception e) {
+
+		}
 		return false;
 	}
 
