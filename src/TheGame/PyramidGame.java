@@ -65,8 +65,7 @@ public class PyramidGame {
 				if (line.charAt(j) == ' ')
 					break;
 			y = (int) Integer.parseInt(line.substring(i + 1, j));
-			String sub = line.substring(j + 1, line.length());
-			value = (int) Integer.parseInt(sub);
+			value = (int) Integer.parseInt(line.substring(j + 1, line.length()));
 		} catch (Exception e) {
 			System.out.println("Wrong input form of \"" + line + "\".");
 			return false;
