@@ -35,7 +35,9 @@ public class PyramidGame {
 	 * user array).
 	 */
 	public void createPyramid() {
-		int size = (int) Math.pow(2, difficulty + 1);
+		int size, s = size = (int) Math.pow(2, difficulty + 1);
+		for (int i = s - 1; i > 0; i--)
+			size += i;
 		pyramid = new int[size];
 		userArray = new boolean[size];
 	}
@@ -43,7 +45,7 @@ public class PyramidGame {
 	public boolean setInputCell(String string) {
 		return false;
 	}
-	
+
 	public int getDifficulty() {
 		return difficulty;
 	}

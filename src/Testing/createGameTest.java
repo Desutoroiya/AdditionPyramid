@@ -26,7 +26,9 @@ public class createGameTest {
 		// Call the method under test
 		game.createPyramid();
 		// Check the arrays' size
-		int size = (int) Math.pow(2, game.getDifficulty() + 1);
+		int size, s = size = (int) Math.pow(2, game.getDifficulty() + 1);
+		for (int i = s - 1; i > 0; i--)
+			size += i;
 		if (game.getPyramid().length != size || game.getUserArray().length != size)
 			fail("Wrong pyramid size for this difficulty level!");
 	}
