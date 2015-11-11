@@ -69,7 +69,7 @@ public class PyramidGame {
 			Random random = new Random();
 			randomNumbers = random.nextInt(50) + 1;
 			pyramid[i] = randomNumbers;
-			System.out.println(randomNumbers);
+			userArray[i] = true;
 		}
 	}
 }
