@@ -60,7 +60,11 @@ public class PyramidGame {
 				System.out.println("Wrong input form of \"" + line + "\".");
 				return false;
 			}
+			String first_number = line.substring(0, i);
+			x = (int) Integer.parseInt(first_number);
 		} catch (Exception e) {
+			System.out.println("Wrong input form of \"" + line + "\".");
+			return false;
 		}
 		return true;
 	}
