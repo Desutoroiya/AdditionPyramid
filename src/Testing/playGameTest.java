@@ -47,4 +47,14 @@ public class playGameTest {
 		if (!game.setInputCell("1 2 3"))
 			fail("Wrong input accepted as an answer for a cell!");
 	}
+	
+	/**
+	 * Test for the method setInputCell(String).
+	 */
+	@Test
+	public void testSetInputCell5() {
+		// Call the method under test & Check the result
+		if (game.setInputCell("1 2 300"))
+			fail("Wrong input accepted as an answer for a cell!");
+	}
 }
