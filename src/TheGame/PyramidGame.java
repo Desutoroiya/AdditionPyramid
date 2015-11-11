@@ -70,6 +70,10 @@ public class PyramidGame {
 				if (line.charAt(j) == ' ')
 					break;
 			y = (int) Integer.parseInt(line.substring(i + 1, j));
+			if (y < 1 || y > (int) Math.pow(2, difficulty + 1)) {
+				System.out.println("Wrong input for cell number");
+				return false;
+			}
 			value = (int) Integer.parseInt(line.substring(j + 1, line.length()));
 		} catch (Exception e) {
 			System.out.println("Wrong input form of \"" + line + "\".");
@@ -92,11 +96,11 @@ public class PyramidGame {
 
 	public void createRandomNumbers() {
 		/**
-		 * Creates random numbers from 1 to 50.
-		 * Amount of Numbers depending on the difficult will be added to the array
+		 * Creates random numbers from 1 to 50. Amount of Numbers depending on
+		 * the difficult will be added to the array
 		 */
 		int size = (int) Math.pow(2, difficulty + 1);
-		for(int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 			Random random = new Random();
 			randomNumbers = random.nextInt(50) + 1;
 			pyramid[i] = randomNumbers;
