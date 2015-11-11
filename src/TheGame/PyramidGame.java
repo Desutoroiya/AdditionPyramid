@@ -1,5 +1,6 @@
 package TheGame;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class PyramidGame {
@@ -56,5 +57,19 @@ public class PyramidGame {
 
 	public boolean[] getUserArray() {
 		return userArray;
+	}
+
+	public void createRandomNumbers() {
+		/**
+		 * Creates random numbers from 1 to 50.
+		 * Amount of Numbers depending on the difficult will be added to the array
+		 */
+		int size = (int) Math.pow(2, difficulty + 1);
+		for(int i = 0; i < size; i++){
+			Random random = new Random();
+			randomNumbers = random.nextInt(50) + 1;
+			pyramid[i] = randomNumbers;
+			userArray[i] = true;
+		}
 	}
 }
