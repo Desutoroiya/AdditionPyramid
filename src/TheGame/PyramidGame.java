@@ -51,7 +51,7 @@ public class PyramidGame {
 	 * @return
 	 */
 	public boolean setInputCell(String line) {
-		int x, y, value, i;
+		int x, y, value, i, j;
 		try {
 			for (i = 0; i < line.length(); i++)
 				if (line.charAt(i) == ' ')
@@ -61,6 +61,12 @@ public class PyramidGame {
 				return false;
 			}
 			x = (int) Integer.parseInt(line.substring(0, i));
+			for (j = i; j < line.length(); j++)
+				if (line.charAt(j) == ' ')
+					break;
+			String sub = line.substring(i, j);
+			y = (int) Integer.parseInt(sub);
+			
 		} catch (Exception e) {
 			System.out.println("Wrong input form of \"" + line + "\".");
 			return false;
