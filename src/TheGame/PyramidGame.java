@@ -60,7 +60,11 @@ public class PyramidGame {
 	}
 
 	public void createRandomNumbers() {
-		int size, s = size = (int) Math.pow(2, difficulty + 1);
+		/**
+		 * Creates random numbers from 1 to 50.
+		 * Amount of Numbers depending on the difficult will be added to the array
+		 */
+		int size = (int) Math.pow(2, difficulty + 1);
 		for(int i = 0; i < size; i++){
 			Random random = new Random();
 			randomNumbers = random.nextInt(50) + 1;
