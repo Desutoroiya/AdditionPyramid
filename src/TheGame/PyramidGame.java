@@ -60,15 +60,16 @@ public class PyramidGame {
 				System.out.println("Wrong input form of \"" + line + "\".");
 				return false;
 			}
-			x = (int) Integer.parseInt(line.substring(0, i));
-			if (x < 1 || x > (int) Math.pow(2, difficulty + 1)) {
-				System.out.println("Wrong input for cell number");
-				return false;
-			}
 			for (j = i + 1; j < line.length(); j++)
 				if (line.charAt(j) == ' ')
 					break;
+			x = (int) Integer.parseInt(line.substring(0, i));
 			y = (int) Integer.parseInt(line.substring(i + 1, j));
+			int max = (int) Math.pow(2, difficulty + 1);
+			if (x < 1 || y < 1 || x > max || y > max) {
+				System.out.println("Wrong input for cell number");
+				return false;
+			}
 			value = (int) Integer.parseInt(line.substring(j + 1, line.length()));
 		} catch (Exception e) {
 			System.out.println("Wrong input form of \"" + line + "\".");
