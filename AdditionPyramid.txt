@@ -19,3 +19,5 @@
    & set the cell number with the input (if it's correct)]
 - isCompleted()
   [check if the game is completed]
+  
+- if completed ask to restart
