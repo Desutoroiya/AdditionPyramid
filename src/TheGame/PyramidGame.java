@@ -109,16 +109,35 @@ public class PyramidGame {
 			return false;
 		for (int i = 0; i < base.length; i++)
 			pyramid[i] = base[i];
-		int i = 0;
-		for (int k = 4; k < pyramid.length; k++) {
-			if (i == 3 || i == 6)
+		if (difficulty == 1) {
+			int i = 0;
+			for (int k = 4; k < pyramid.length; k++) {
+				if (i == 3 || i == 6)
+					i++;
+				pyramid[k] = pyramid[i] + pyramid[i + 1];
 				i++;
-			pyramid[k] = pyramid[i] + pyramid[i + 1];
-			i++;
+			}
+		} else if (difficulty == 2) {
+			int i = 0;
+			for (int k = 8; k < pyramid.length; k++) {
+				if (i == 7 || i == 14 || i == 20 || i == 25 || i == 29 || i == 32 || i == 34)
+					i++;
+				pyramid[k] = pyramid[i] + pyramid[i + 1];
+				i++;
+			}
+		} else {
+			int i = 0;
+			for (int k = 16; k < pyramid.length; k++) {
+				if (i == 15 || i == 30 || i == 44 || i == 57 || i == 69 || i == 80 || i == 90 || i == 99 || i == 107
+						|| i == 114 || i == 120 || i == 125 || i == 129 || i == 132 || i == 134)
+					i++;
+				pyramid[k] = pyramid[i] + pyramid[i + 1];
+				i++;
+			}
 		}
 
 		for (int j = 0; j < pyramid.length; j++)
-			System.out.print(pyramid[j] + " ");
+			System.out.print(pyramid[j] + ", ");
 		return true;
 	}
 }
