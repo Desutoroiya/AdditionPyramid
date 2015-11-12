@@ -14,44 +14,20 @@ public class createRandomNumbersTest {
 	@Test
 	public void testRandomNumbers() {
 		PyramidGame game = new PyramidGame();
+		int difficulty = game.getDifficulty();
 		game.completePyramid();
 
-		if (game.getDifficulty() == 1) {
-			int size = 4;
-			int[] pyramid = game.getPyramid();
-			boolean[] userArray = game.getUserArray();
-			for (int i = 0; i < size; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || !userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] == 0 || userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-		} else if (game.getDifficulty() == 2) {
-			int size = 8;
-			int[] pyramid = game.getPyramid();
-			boolean[] userArray = game.getUserArray();
-			for (int i = 0; i < size; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || !userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] == 0 || userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-		} else {
-			int size = 16;
-			int[] pyramid = game.getPyramid();
-			boolean[] userArray = game.getUserArray();
-			for (int i = 0; i < size; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || !userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] == 0 || userArray[i]) {
-					fail("Wrong data in the arrays.");
-				}
-		}
+		int size = (int) Math.pow(2, difficulty + 1);
+		int[] pyramid = game.getPyramid();
+		boolean[] userArray = game.getUserArray();
+
+		for (int i = 0; i < size; i++)
+			if (pyramid[i] < 1 || pyramid[i] > 50 || !userArray[i]) {
+				fail("Wrong data in the arrays.");
+			}
+		for (int i = size; i < pyramid.length; i++)
+			if (pyramid[i] == 0 || userArray[i]) {
+				fail("Wrong data in the arrays.");
+			}
 	}
 }

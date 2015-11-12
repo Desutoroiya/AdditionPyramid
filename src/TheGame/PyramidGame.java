@@ -130,10 +130,6 @@ public class PyramidGame {
 			pyramid[k] = pyramid[i] + pyramid[i + 1];
 			i++;
 		}
-
-		// TODO Delete syso
-		for (int j = 0; j < pyramid.length; j++)
-			System.out.print(pyramid[j] + ", ");
 		return true;
 	}
 }
