@@ -89,6 +89,9 @@ public class PyramidGame {
 	public boolean[] getUserArray() {
 		return userArray;
 	}
+	
+	public void completePyramid() {
+	}
 
 	public void createRandomNumbers() {
 		/**
