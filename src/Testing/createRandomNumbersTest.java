@@ -25,7 +25,7 @@ public class createRandomNumbersTest {
 					fail("Wrong data in the arrays.");
 				}
 			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || userArray[i]) {
+				if (pyramid[i] == 0 || userArray[i]) {
 					fail("Wrong data in the arrays.");
 				}
 		} else if (game.getDifficulty() == 2) {
@@ -37,7 +37,7 @@ public class createRandomNumbersTest {
 					fail("Wrong data in the arrays.");
 				}
 			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || userArray[i]) {
+				if (pyramid[i] == 0 || userArray[i]) {
 					fail("Wrong data in the arrays.");
 				}
 		} else {
@@ -49,7 +49,7 @@ public class createRandomNumbersTest {
 					fail("Wrong data in the arrays.");
 				}
 			for (int i = size; i < pyramid.length; i++)
-				if (pyramid[i] < 1 || pyramid[i] > 50 || userArray[i]) {
+				if (pyramid[i] == 0 || userArray[i]) {
 					fail("Wrong data in the arrays.");
 				}
 		}
