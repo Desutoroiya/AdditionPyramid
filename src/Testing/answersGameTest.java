@@ -13,14 +13,20 @@ public class answersGameTest {
 		PyramidGame game = new PyramidGame();
 		int difficulty = game.getDifficulty();
 		int[] expected;
-		if (difficulty == 1) {
+		
+		switch (difficulty) {
+		case 1:
 			game.completePyramid(new int[] { 1, 2, 3, 4 });
 			expected = new int[] { 1, 2, 3, 4, 3, 5, 7, 8, 12, 20 };
-		} else if (difficulty == 2) {
+			break;
+			
+		case 2:
 			game.completePyramid(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 });
 			expected = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 3, 5, 7, 9, 11, 13, 15, 8, 12, 16, 20, 24, 28, 20, 28, 36,
 					44, 52, 48, 64, 80, 96, 112, 144, 176, 256, 320, 576 };
-		} else {
+			break;
+			
+		default:
 			game.completePyramid(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 });
 			expected = new int[] { 
 					1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
@@ -38,13 +44,11 @@ public class answersGameTest {
 					28672, 32768, 36864, 40960, 
 					61440, 69632, 77824, 
 					131072, 147456, 
-					278528 };
+					278528 };			
 		}
 
 		int[] result = game.getPyramid();
-
 		for (int i = 0; i < result.length; i++)
 			assertEquals(expected[i], result[i]);
 	}
-
 }
