@@ -8,7 +8,6 @@ public class PyramidGame {
 	private int difficulty;
 	int[] pyramid;
 	boolean[] userArray;
-	public int randomNumbers;
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -90,6 +89,7 @@ public class PyramidGame {
 	public boolean[] getUserArray() {
 		return userArray;
 	}
+<<<<<<< HEAD
 
 	public void createRandomNumbers() {
 		/**
@@ -101,7 +101,50 @@ public class PyramidGame {
 			Random random = new Random();
 			randomNumbers = random.nextInt(50) + 1;
 			pyramid[i] = randomNumbers;
+=======
+	
+	public void completePyramid(){
+		int[] base = createRandomNumbers();
+		int size = (int) Math.pow(2, difficulty + 1);
+		for (int i = 0; i < size; i++) {
+			pyramid[i] = base[i];
+>>>>>>> refs/remotes/origin/master
 			userArray[i] = true;
 		}
+		completePyramid(base);
+	}
+	
+	/**
+	 * Creates random numbers from 1 to 50. Amount of Numbers depending on
+	 * the difficult will be added to the array
+	 */
+	public int[] createRandomNumbers() {
+		int size = (int) Math.pow(2, difficulty + 1);
+		int[] randomNumbers = new int[size];
+		for (int i = 0; i < size; i++) {
+			Random random = new Random();
+			randomNumbers[i] = random.nextInt(50) + 1;
+		}
+		return randomNumbers;
+	}
+
+	public boolean completePyramid(int[] base) {
+		if (base.length != (int) Math.pow(2, difficulty + 1))
+			return false;
+		for (int i = 0; i < base.length; i++)
+			pyramid[i] = base[i];
+
+		int next, skip = next = base.length - 1; 
+		int i = 0;
+		for (int k = base.length; k < pyramid.length; k++) {
+			if (i == skip) {
+				i++;
+				skip += next;
+				next--;
+			}
+			pyramid[k] = pyramid[i] + pyramid[i + 1];
+			i++;
+		}
+		return true;
 	}
 }
