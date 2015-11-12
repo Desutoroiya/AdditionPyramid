@@ -109,14 +109,16 @@ public class PyramidGame {
 			return false;
 		for (int i = 0; i < base.length; i++)
 			pyramid[i] = base[i];
-		pyramid[4] = pyramid[0] + pyramid[1];
-		pyramid[5] = pyramid[1] + pyramid[2];
-		pyramid[6] = pyramid[2] + pyramid[3];
-		pyramid[7] = pyramid[4] + pyramid[5];
-		pyramid[8] = pyramid[5] + pyramid[6];
-		pyramid[9] = pyramid[7] + pyramid[8];
-		for (int i = 0; i < pyramid.length; i++)
-			System.out.print(pyramid[i] + " ");
+		int i = 0;
+		for (int k = 4; k < pyramid.length; k++) {
+			if (i == 3 || i == 6)
+				i++;
+			pyramid[k] = pyramid[i] + pyramid[i + 1];
+			i++;
+		}
+
+		for (int j = 0; j < pyramid.length; j++)
+			System.out.print(pyramid[j] + " ");
 		return true;
 	}
 }
