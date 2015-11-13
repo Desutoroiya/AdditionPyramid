@@ -44,7 +44,7 @@ public class playGameTest {
 	@Test
 	public void testSetInputCell4() {
 		// Call the method under test & Check the result
-		if (!game.setInputCell("1 2 3"))
+		if (!game.setInputCell("3 2 1"))
 			fail("Wrong input accepted as an answer for a cell!");
 	}
 
