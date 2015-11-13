@@ -66,7 +66,7 @@ public class PyramidGame {
 			x = (int) Integer.parseInt(line.substring(0, i));
 			y = (int) Integer.parseInt(line.substring(i + 1, j));
 			int max = (int) Math.pow(2, difficulty + 1);
-			if (x < 1 || y < 1 || x > max || y > max || y > x) {
+			if (x < 1 || y < 1 || x > max || y > x) {
 				System.out.println("Wrong input for cell number");
 				return false;
 			}
