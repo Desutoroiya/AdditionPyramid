@@ -64,17 +64,19 @@ public class PyramidGame {
 	private void giveInstructions() {
 		String instructions = "Instructions:\nYou chose to play the Addition Pyramid with " + baseLength
 				+ " numbers in its base!\nTo enter " + "a number in a cell you have to enter three (3) numbers\n"
-				+ "in the following form:   x    y   value\n" 
-				+ "x     : the row (strating from the top)\n"
-				+ "y     : the column (starting from the left)\n" 
-				+ "value : the answer for that cell.\nGood luck!\n"
+				+ "in the following form : x y value\n" + "x     : the row (strating from the top)\n"
+				+ "y     : the column (starting from the left)\n" + "value : the answer for that cell.\nGood luck!\n"
 				+ "--------------------------------------------------------------------\n";
 		System.out.println(instructions);
 	}
 
-	private void printPyramid() {
+	public void printPyramid() {
 		if (pyramid == null)
 			return;
+		System.out.print("\t  ");
+		for (int i = 1; i <= baseLength; i++)
+			System.out.print(i + "\t");
+		System.out.print("\n1\t| ");
 		int position = 0, lineLength = 1;
 		for (int i = pyramid.length - 1; i >= 0; i--) {
 			if (userArray[i])
@@ -83,13 +85,15 @@ public class PyramidGame {
 				System.out.print("--\t");
 			position++;
 			if (position == lineLength) {
-				System.out.println();
 				position = 0;
 				lineLength++;
+				System.out.println();
+				if (lineLength <= baseLength)
+					System.out.print(lineLength + "\t| ");
 			}
 		}
 		for (int i = 0; i < baseLength; i++)
-			System.out.print("--------");
+			System.out.print("---------");
 		System.out.println();
 	}
 
@@ -102,6 +106,24 @@ public class PyramidGame {
 			if (setInputCell(line))
 				printPyramid();
 		} while (!gameIsFinished());
+		System.out.println("Congratulations! You completed the pyramid!");
+	}
+
+	private boolean checkValue(int x, int y, int value) {
+		// Check the value & fill in the pyramid if it's correct
+		int magic = 0;
+		for (int i = 1; i <= x; i++)
+			magic += i;
+		int pos = pyramid.length - magic + x - y;
+
+		if (userArray[pos]) {
+			System.out.println("This cell is already completed!");
+			return false;
+		}
+		if (pyramid[pos] != value)
+			return false;
+		userArray[pos] = true;
+		return true;
 	}
 
 	/**
@@ -134,11 +156,7 @@ public class PyramidGame {
 			System.out.println("Wrong input form of \"" + line + "\".");
 			return false;
 		}
-
-		// Check the value & fill in the pyramid if it's correct
-		
-		
-		return true;
+		return checkValue(x, y, value);
 	}
 
 	public int getDifficulty() {
