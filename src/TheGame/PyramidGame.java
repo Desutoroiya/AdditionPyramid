@@ -28,7 +28,7 @@ public class PyramidGame {
 				if (line.length() != 1)
 					input = 0;
 			} catch (Exception e) {
-				System.out.println("Please choose number 1,2 or 3");
+				input = 0;
 			}
 		} while (input < 1 || input > 3);
 		System.out.println("-------------------------------------------------------------------");
@@ -36,8 +36,6 @@ public class PyramidGame {
 		baseLength = (int) Math.pow(2, difficulty + 1);
 		createPyramid();
 		completePyramid();
-		// TODO delete - move
-		play();
 	}
 
 	/**
