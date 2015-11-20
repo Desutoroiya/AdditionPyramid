@@ -13,6 +13,7 @@ public class createRandomNumbersTest {
 	 */
 	@Test
 	public void testRandomNumbers() {
+		// Spy
 		PyramidGame game = new PyramidGame();
 		int difficulty = game.getDifficulty();
 		game.completePyramid();

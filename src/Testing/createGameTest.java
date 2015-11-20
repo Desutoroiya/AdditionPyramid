@@ -13,6 +13,7 @@ public class createGameTest {
 	 */
 	@Test
 	public void testCreateGame() {
+		// Spy
 		int result = game.getDifficulty();
 		if (result < 1 || result > 3)
 			fail("Difficulty not decided!");
@@ -23,6 +24,7 @@ public class createGameTest {
 	 */
 	@Test
 	public void testCreatePyramid() {
+		// Spy
 		// Call the method under test
 		game.createPyramid();
 		// Check the arrays' size

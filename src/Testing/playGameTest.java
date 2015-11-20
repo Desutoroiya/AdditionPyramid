@@ -6,6 +6,7 @@ import TheGame.PyramidGame;
 
 public class playGameTest {
 
+	// Stubs
 	PyramidGame game = new PyramidGame();
 
 	/**
