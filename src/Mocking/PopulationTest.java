@@ -2,11 +2,9 @@ package Mocking;
 
 import static org.junit.Assert.*;
 import org.mockito.*;
-
 import org.junit.Test;
 
 public class PopulationTest {
-
 	PopulationCounter population;
 	
 	@Test
@@ -26,30 +24,5 @@ public class PopulationTest {
 		assertEquals(popTest, pop);
 		
 		Mockito.verify(population, Mockito.times(2)).calculatePopulation();
-		
 	}
-	
-	
-	
-//	@Test
-//	public void test() {
-//		Integer first,mockedFirst;
-//		Counter count = new Counter();
-//		Counter mockedCounter = mock(Counter.class);
-//		when(mockedCounter.getValue()).thenReturn(1).thenReturn(2);
-//		first = count.getValue();
-//		mockedFirst = mockedCounter.getValue();
-//		assertEquals("Wronge Answer !",first , mockedFirst);
-//		
-//		first = count.getValue();
-//		mockedFirst = mockedCounter.getValue();
-//		assertEquals("Wronge Answer !",first , mockedFirst);
-//		
-//		first = count.getValue();
-//		mockedFirst = mockedCounter.getValue();
-//		
-//		verify(mockedCounter,atLeast(4)).getValue();
-//		
-//		assertEquals("Wronge Answer !",first , mockedFirst);
-//	}
 }
