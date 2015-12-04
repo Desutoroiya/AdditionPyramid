@@ -1,31 +1,21 @@
 package Mocking;
 
-import static org.junit.Assert.*;
 import org.mockito.*;
 import org.junit.Test;
 
 public class PopulationTest {
 	@Mock
-	private PopulationCounter population = Mockito.mock(PopulationCounter.class);
+	private PopulationDifference difference = Mockito.mock(PopulationDifference.class);
 
 	@InjectMocks
-	private PopulationDifference difference = new PopulationDifference(10);
+	private PopulationCounter population = new PopulationCounter(difference);
 
 	@Test
 	public void test() {
-		Mockito.when(population.calculatePopulation(difference)).thenReturn(1100000).thenReturn(1210000);
+		Mockito.when(population.calculatePopulation()).thenReturn(1100000);
 
-		PopulationCounter test = new PopulationCounter(difference);
+		population.calculatePopulation();
 
-		int popTest, pop;
-		popTest = test.calculatePopulation(difference);
-		pop = population.calculatePopulation(difference);
-		assertEquals(popTest, pop);
-
-		popTest = test.calculatePopulation(difference);
-		pop = population.calculatePopulation(difference);
-		assertEquals(popTest, pop);
-
-		Mockito.verify(population, Mockito.times(2)).calculatePopulation(difference);
+		Mockito.verify(difference).calculateDifference();
 	}
 }

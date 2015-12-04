@@ -1,18 +1,14 @@
 package Mocking;
 
 public class PopulationDifference {
-	private int num;
-	
-	public PopulationDifference(){
-		this(10);
+	private int population;
+
+	public void setPopulation(int population) {
+		this.population = population;
 	}
 
-	public PopulationDifference(int num){
-		this.num = num;
-	}
-
-	public int getDifference(int population) {
-		return population / num;
+	public int calculateDifference() {
+		return population / 10;
 	}
 
 }
